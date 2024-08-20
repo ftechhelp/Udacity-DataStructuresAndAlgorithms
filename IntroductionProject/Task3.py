@@ -12,6 +12,45 @@ with open('calls.csv', 'r') as f:
     reader = csv.reader(f)
     calls = list(reader)
 
+unique_area_codes_called = set()
+bangalore_area_code_called = 0
+called_by_bangalore = 0
+
+for row in calls:
+    
+    caller = row[0]
+    receiver = row[1]
+    bangalore_area_code = "(080)"
+
+    if (not caller.startswith(bangalore_area_code)):
+        continue
+
+    isFixedLine = receiver.startswith("(")
+    isMobileNumber = len(receiver.split(" ")) == 2
+    isTelemarketer = receiver.startswith("140")
+
+    if (isFixedLine):
+        unique_area_codes_called.add(receiver.split(")")[0][1:])
+        bangalore_area_code_called += 1 if receiver.startswith(bangalore_area_code) else 0
+
+    if (isMobileNumber):
+        unique_area_codes_called.add(receiver[:4])
+
+    if (isTelemarketer):
+        unique_area_codes_called.add("140")
+
+    called_by_bangalore += 1
+
+print("The numbers called by people in Bangalore have codes:")
+for area_code in sorted(unique_area_codes_called):
+    print(area_code)
+
+print(bangalore_area_code_called)
+print(called_by_bangalore)
+
+percentage_of_bangalore_to_bangalore = round((bangalore_area_code_called / called_by_bangalore) * 100, 2)
+print(f"{percentage_of_bangalore_to_bangalore} percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore.")
+
 """
 TASK 3:
 (080) is the area code for fixed line telephones in Bangalore.
