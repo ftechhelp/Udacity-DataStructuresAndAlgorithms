@@ -11,23 +11,23 @@ with open('calls.csv', 'r') as f:
     reader = csv.reader(f)
     calls = list(reader)
 
-uniqueNumbers = set()
+unique_numbers = set()
 
 for row in texts:
     sender = row[0]
     receiver = row[1]
         
-    uniqueNumbers.add(sender)
-    uniqueNumbers.add(receiver)
+    unique_numbers.add(sender)
+    unique_numbers.add(receiver)
 
 for row in calls:
     sender = row[0]
     receiver = row[1]
             
-    uniqueNumbers.add(sender)
-    uniqueNumbers.add(receiver)
+    unique_numbers.add(sender)
+    unique_numbers.add(receiver)
 
-print(f"There are {len(uniqueNumbers)} different telephone numbers in the records.")
+print(f"There are {len(unique_numbers)} different telephone numbers in the records.")
 
 """
 TASK 1:

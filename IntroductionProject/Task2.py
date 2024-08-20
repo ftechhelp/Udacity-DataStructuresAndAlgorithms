@@ -13,9 +13,9 @@ with open('calls.csv', 'r') as f:
     reader = csv.reader(f)
     calls = list(reader)
 
-phoneNumbersAndTotalTimeOnThePhone = {}
-longestOnPhoneNumber = ""
-longestOnTime = 0
+phone_numbers_and_total_time_on_the_phone = {}
+phone_number_longest_on_the_phone = ""
+time_of_longest_on_the_phone = 0
 
 for row in calls:
     date_string = row[2]
@@ -25,27 +25,27 @@ for row in calls:
 
     caller = row[0]
     receiver = row[1]
-    timeTaken = row[3]
+    time_taken = row[3]
 
-    if (caller in phoneNumbersAndTotalTimeOnThePhone):
-        phoneNumbersAndTotalTimeOnThePhone[caller] += int(timeTaken)
+    if (caller in phone_numbers_and_total_time_on_the_phone):
+        phone_numbers_and_total_time_on_the_phone[caller] += int(time_taken)
     else:
-        phoneNumbersAndTotalTimeOnThePhone[caller] = int(timeTaken)
+        phone_numbers_and_total_time_on_the_phone[caller] = int(time_taken)
 
-    if (receiver in phoneNumbersAndTotalTimeOnThePhone):
-        phoneNumbersAndTotalTimeOnThePhone[receiver] += int(timeTaken)
+    if (receiver in phone_numbers_and_total_time_on_the_phone):
+        phone_numbers_and_total_time_on_the_phone[receiver] += int(time_taken)
     else:
-        phoneNumbersAndTotalTimeOnThePhone[receiver] = int(timeTaken)
+        phone_numbers_and_total_time_on_the_phone[receiver] = int(time_taken)
 
-    if (phoneNumbersAndTotalTimeOnThePhone[caller] > longestOnTime):
-        longestOnPhoneNumber = caller
-        longestOnTime = phoneNumbersAndTotalTimeOnThePhone[caller]
+    if (phone_numbers_and_total_time_on_the_phone[caller] > time_of_longest_on_the_phone):
+        phone_number_longest_on_the_phone = caller
+        time_of_longest_on_the_phone = phone_numbers_and_total_time_on_the_phone[caller]
 
-    if (phoneNumbersAndTotalTimeOnThePhone[receiver] > longestOnTime):
-        longestOnPhoneNumber = receiver
-        longestOnTime = phoneNumbersAndTotalTimeOnThePhone[receiver]
+    if (phone_numbers_and_total_time_on_the_phone[receiver] > time_of_longest_on_the_phone):
+        phone_number_longest_on_the_phone = receiver
+        time_of_longest_on_the_phone = phone_numbers_and_total_time_on_the_phone[receiver]
 
-print(f"{longestOnPhoneNumber} spent the longest time, {longestOnTime} seconds, on the phone during September 2016.")
+print(f"{phone_number_longest_on_the_phone} spent the longest time, {time_of_longest_on_the_phone} seconds, on the phone during September 2016.")
 
 """
 TASK 2: Which telephone number spent the longest time on the phone

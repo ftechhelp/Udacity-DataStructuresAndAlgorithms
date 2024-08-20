@@ -11,8 +11,18 @@ with open('calls.csv', 'r') as f:
     reader = csv.reader(f)
     calls = list(reader)
 
-print(f"First record of texts, {texts[0][0]} texts {texts[0][1]} at time {texts[0][2]}")
-print(f"Last record of calls, {calls[len(calls) - 1][0]} calls {calls[len(calls) - 1][1]} at time {calls[len(calls) - 1][2]}, lasting {calls[len(calls) - 1][3]} seconds")
+first_text_record_incoming_number = texts[0][0]
+first_text_record_answering_number = texts[0][1]
+first_text_record_time = texts[0][2]
+
+last_call_record = calls[len(calls) - 1]
+last_call_record_incoming_number = last_call_record[0]
+last_call_record_answering_number = last_call_record[1]
+last_call_record_time = last_call_record[2]
+last_call_record_duration = last_call_record[3]
+
+print(f"First record of texts, {first_text_record_incoming_number} texts {first_text_record_answering_number} at time {first_text_record_time}")
+print(f"Last record of calls, {last_call_record_incoming_number} calls {last_call_record_answering_number} at time {last_call_record_time}, lasting {last_call_record_duration} seconds")
 
 
 """
