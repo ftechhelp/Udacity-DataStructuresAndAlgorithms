@@ -11,6 +11,23 @@ with open('calls.csv', 'r') as f:
     reader = csv.reader(f)
     calls = list(reader)
 
+uniqueNumbers = set()
+
+for row in texts:
+    for index, phonenumber in enumerate(row):
+        if index > 1:
+            continue
+        
+        uniqueNumbers.add(phonenumber)
+
+for row in calls:
+    for index, phonenumber in enumerate(row):
+        if index > 1:
+            continue
+
+        uniqueNumbers.add(phonenumber)
+
+print(f"There are {len(uniqueNumbers)} different telephone numbers in the records.")
 
 """
 TASK 1:
