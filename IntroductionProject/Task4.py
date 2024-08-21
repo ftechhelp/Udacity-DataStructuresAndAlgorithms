@@ -20,11 +20,13 @@ for row in calls:
     caller = row[0]
     receiver = row[1]
 
-    possible_telemarketers.add(caller)
+    if (caller not in impossible_telemarketers):
+        possible_telemarketers.add(caller)
 
     if (receiver in possible_telemarketers and receiver not in impossible_telemarketers):
         possible_telemarketers.remove(receiver)
         impossible_telemarketers.add(receiver)
+
 
 for row in texts:
 
