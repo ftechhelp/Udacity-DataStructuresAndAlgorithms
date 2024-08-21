@@ -1,0 +1,38 @@
+Task0:
+- O(n) for reading texts csv
+- O(m) for reading calls csv
+- the rest is O(1)
+Worst-Case Big-O Notation = O(n + m)
+
+Task1:
+- O(n) for reading texts csv
+- O(m) for reading calls csv
+- O(n) for first loop through texts
+- O(m) for second loop through calls
+- the rest is O(1)
+Worst-Case Big-O Notation = O(n + m)
+
+Task2:
+- O(n) for reading texts csv
+- O(m) for reading calls csv
+- O(n) for loop through calls
+- The rest is O(1)
+Worst-Case Big-O Notation = O(n + m)
+
+Task3:
+- O(n) for reading texts csv
+- O(m) for reading calls csv
+- O(k log k) for sorting unique area codes
+- O(k) for printing the sorted area codes
+- the rest is O(1)
+Worst-Case Big-O Notation = O(n + m + k log k)
+
+Task4:
+- O(n) for reading texts csv
+- O(m) for reading calls csv
+- O(m) for looping through calls
+- O(n) for looping through texts
+- O(k log k) for sorting possible telemarketers
+- O(k) for printing the sorted telemarketers
+Worst-Case Big-O Notation = O(n + m + k log k)
+
