@@ -26,10 +26,6 @@ class LRU_Cache(object):
 
         self.cache[key] = value
 
-    def print(self):
-        print(self.cache)
-        return 
-
     def __handle_at_capacity(self):
 
         if len(self.cache) == self.capacity:
