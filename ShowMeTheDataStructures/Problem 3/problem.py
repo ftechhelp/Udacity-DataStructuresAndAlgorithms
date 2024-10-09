@@ -2,6 +2,10 @@ import heapq
 from collections import defaultdict
 from typing import Optional
 
+###
+# Here I used the template for this problem provided by udacity/nd256-data-structures-and-algorithms
+###
+
 # Huffman Tree Node
 class HuffmanNode:
     """
